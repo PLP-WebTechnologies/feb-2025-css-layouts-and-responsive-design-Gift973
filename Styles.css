@@ -1,0 +1,89 @@
+ /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+nav a:hover {
+    background-color: #444;
+}
+
+/* Main Layout using Flexbox and Grid */
+main {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* 1 column for sidebar, 3 for content */
+    gap: 20px;
+    padding: 2rem;
+}
+
+.sidebar {
+    background-color: #f4f4f4;
+    padding: 1rem;
+}
+
+.content {
+    background-color: #e9ecef;
+    padding: 1rem;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Media Queries for Responsive Design */
+
+/* For mobile devices */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column; /* Stack navigation items */
+        text-align: center;
+    }
+
+    main {
+        grid-template-columns: 1fr; /* Stack sidebar and content */
+    }
+
+    .sidebar, .content {
+        padding: 1rem;
+    }
+}
+
+/* For tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    main {
+        grid-template-columns: 1fr 2fr; /* Adjust sidebar and content ratio */
+    }
+}
+
+/* For desktop */
+@media (min-width: 1025px) {
+    main {
+        grid-template-columns: 1fr 3fr; /* Standard layout */
+    }
+}
